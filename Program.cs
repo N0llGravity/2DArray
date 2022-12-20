@@ -13,7 +13,7 @@
 
 //     for(int i = 0; i < rows; i++)
 //     {
-//         for(int j = colums; j < colums; j++)
+//         for(int j = 0; j < colums; j++)
 //         {
 //             array[i,j] = new Random().Next(minValue, maxValue);
 //         }
@@ -104,14 +104,9 @@ Show2dArray(myArray);
 
 // void QuadSwitch(int[,] array)
 // {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             if(i % 2 == 0 && j % 2 == 0)
-//                 array[i,j] *= array[i,j];
-//         }
-//     }
+//     for (int i = 0; i < array.GetLength(0); i += 2)
+//         for (int j = 0; j < array.GetLength(1); j+=2)
+//             array[i,j] *= array[i,j];
 // }
 
 // Console.WriteLine("input a number of rows ");
@@ -159,14 +154,8 @@ void Show2dArray(int[,] array)
 int Dioganal(int[,] array)
 {
     int sum = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if(i == j)
-                sum += array[i,j];
-        }
-    }
+    for (int i = 0; i < array.GetLength(0) && i < array.GetLength(1); i++)
+        sum += array[i,i];
     return sum;
 }
 Console.WriteLine("input a number of rows ");
