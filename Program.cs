@@ -123,7 +123,7 @@ Show2dArray(myArray);
 // QuadSwitch(myArray);
 // Show2dArray(myArray);
 
-
+// Сумма элементов по главной диоганали двумерного массива
 int[,] CreateArray(int rows, int colums, int minValue, int maxValue)
 {
     int[,] array = new int[rows, colums];
